@@ -1,13 +1,17 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import './App.css';
-import Navbar from './components/navbar/Navbar';
+import Home from './pages/home/Home';
 
 function App() {
   return (
     <>
-      <div className="App">
-        this is change what i want to be
-      </div>
-      <Navbar></Navbar>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} ></Route>
+        </Routes>
+      </BrowserRouter>
+
     </>
   );
 }
