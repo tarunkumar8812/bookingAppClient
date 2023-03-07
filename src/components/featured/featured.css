@@ -1,0 +1,39 @@
+.featured {
+    width: 100%;
+    max-width: 1024px;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    gap: 20px;
+    z-index: 1;
+    
+}
+
+.featutredItem {
+    position: relative;
+    color: white;
+    overflow: hidden;
+    border-radius: 10px;
+    height: 250px;
+    min-width: 300px;
+    animation: move 25s 4s infinite alternate-reverse ease-in-out;
+}
+
+
+@keyframes move {
+    from {left: -1250px;}
+    to {left: 0px;}
+}
+
+.featuredImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.featuredTitles {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    text-transform: capitalize;
+}

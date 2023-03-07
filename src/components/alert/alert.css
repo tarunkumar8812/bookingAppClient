@@ -1,0 +1,35 @@
+.bookingAlert {
+    width: 700px;
+    height: 200px;
+    color: green;
+    z-index: 150;
+    background-color: rgb(225, 224, 224);
+    position: fixed;
+    top: 40%;
+    left: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    transition: 1s;
+
+}
+
+.bookingAlert p {
+    margin: 20px;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+
+.bookingAlert button {
+    border: none;
+    padding: 10px 20px;
+    background-color: #0071c2;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+}
