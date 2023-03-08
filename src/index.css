@@ -1,7 +1,7 @@
 button:hover {
-  scale: 1.02;
-  overflow-x: hidden;
-  /* transition: 0.5s; */
-  /* color: rgb(24, 112, 175); */
-  /* background-color: rgb(35, 191, 32); */
+    scale: 1.02;
+    overflow-x: hidden;
+    /* transition: 0.5s; */
+    /* color: rgb(24, 112, 175); */
+    /* background-color: rgb(35, 191, 32); */
 }

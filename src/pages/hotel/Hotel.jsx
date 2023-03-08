@@ -42,7 +42,7 @@ const Hotel = () => {
     // console.log(days);
 
 
-    const { data, loading } = useFetch(`http://localhost:5000/api/hotels/${id}`);
+    const { data, loading } = useFetch(`https://bookingappserver.vercel.app/api/hotels/${id}`);
     // console.log("data");
 
     const photos = data?.data?.photos.length > 1 ? data?.data?.photos : [

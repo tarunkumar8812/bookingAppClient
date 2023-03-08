@@ -26,7 +26,7 @@ const Register = () => {
         e.preventDefault();
         dispatch({ type: "LOGIN_START" });
         try {
-            const res = await axios.post("http://localhost:5000/api/auth/Register", credentials);
+            const res = await axios.post("https://bookingappserver.vercel.app/api/auth/Register", credentials);
             dispatch({ type: "LOGIN_SUCCESS", payload: res.data.details });
             navigate("/")
         } catch (err) {

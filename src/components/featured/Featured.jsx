@@ -8,7 +8,7 @@ const Featured = () => {
 
     // this is for fetching number of hotels and it's images in every city
 
-    const { data, loading } = useFetch("http://localhost:5000/api/hotels/ab/countByCity")
+    const { data, loading } = useFetch("https://bookingappserver.vercel.app/api/hotels/ab/countByCity")
 
     // console.log("data");
     // console.log(data);

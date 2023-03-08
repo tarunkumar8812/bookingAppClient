@@ -10,7 +10,7 @@ import "./reserve.css";
 const Reserve = ({ setOpen, hotelId, setConfirmBooking }) => {
 
     const [selectedRooms, setSelectedRooms] = useState([]);
-    const { data } = useFetch(`http://localhost:5000/api/hotels/room/${hotelId}`);
+    const { data } = useFetch(`https://bookingappserver.vercel.app/api/hotels/room/${hotelId}`);
 
 
     const { date } = useContext(SearchContext);
@@ -60,7 +60,7 @@ const Reserve = ({ setOpen, hotelId, setConfirmBooking }) => {
         try {
             await Promise.all(
                 selectedRooms.map((roomId) => {
-                    const res = axios.put(`http://localhost:5000/api/rooms/availability/${roomId}`, {
+                    const res = axios.put(`https://bookingappserver.vercel.app/api/rooms/availability/${roomId}`, {
                         dates: alldates,
                     });
                     return res.data;
