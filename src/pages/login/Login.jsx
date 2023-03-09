@@ -16,7 +16,6 @@ const Login = () => {
 
     const handleChange = (e) => {
         setCredentials((prev) => ({ ...prev, [e.target.id]: e.target.value }));
-        console.log(e.target.value);
 
     };
 
@@ -37,21 +36,30 @@ const Login = () => {
 
     const goToRegister = () => {
         navigate("/register")
+        credentials.username = undefined
+        credentials.password = undefined
+        window.location.reload(false)
     }
 
 
     const handleForgotPassword = () => {
         navigate("/register")
         alert("Password reset link is sent to your email!!")
+        credentials.username = undefined
+        credentials.password = undefined
+        window.location.reload(false)
+
     }
 
 
     return (
         <div className="login">
             <div className="lContainer">
+                {error && <span>{error.message}</span>}
+
                 <input
                     type="text"
-                    placeholder="username"
+                    placeholder="email"
                     id="username"
                     onChange={handleChange}
                     className="lInput"
@@ -67,13 +75,15 @@ const Login = () => {
                     Login
                 </button>
                 <button disabled={loading} onClick={goToRegister} className="lButton">
-                    Register
+                    I am a new User? Register
                 </button>
-                {error && <span>{error.message}</span>}
                 {error && <button disabled={loading} onClick={handleForgotPassword} className="lButton">
                     Forgot password
                 </button>}
             </div>
+            <div className="goBack" onClick={() => {
+                navigate(-1)
+            }}><img src="https://cdn0.iconfinder.com/data/icons/web-seo-and-advertising-media-1/512/218_Arrow_Arrows_Back-512.png" alt="Go"></img> Back</div>
         </div>
     );
 };

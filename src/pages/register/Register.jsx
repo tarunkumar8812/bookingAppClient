@@ -12,13 +12,13 @@ const Register = () => {
         password: undefined,
     });
 
+
     const { loading, dispatch } = useContext(AuthContext);
 
     const navigate = useNavigate()
 
     const handleChange = (e) => {
         setCredentials((prev) => ({ ...prev, [e.target.id]: e.target.value }));
-        console.log(e.target.value);
 
     };
 
@@ -28,7 +28,7 @@ const Register = () => {
         try {
             const res = await axios.post("https://bookingappserver.vercel.app/api/auth/Register", credentials);
             dispatch({ type: "LOGIN_SUCCESS", payload: res.data.details });
-            navigate("/")
+            navigate("/login")
         } catch (err) {
             dispatch({ type: "LOGIN_FAILURE", payload: err.response.data });
         }
@@ -37,7 +37,7 @@ const Register = () => {
 
     const goToLogin = () => {
         navigate("/login")
-
+        window.location.reload(false)
     }
 
 
@@ -76,10 +76,14 @@ const Register = () => {
                     Register
                 </button>
                 <button disabled={loading} onClick={goToLogin} className="lButton">
-                    Already Register
+                    Already have an account? Register
                 </button>
                 {/* {error && <span>{error.message}</span>} */}
             </div>
+
+            <div className="goBack" onClick={() => {
+                navigate(-1)
+            }}><img src="https://cdn0.iconfinder.com/data/icons/web-seo-and-advertising-media-1/512/218_Arrow_Arrows_Back-512.png" alt="Go"></img> Back</div>
         </div>
     );
 };

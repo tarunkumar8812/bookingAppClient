@@ -1,3 +1,32 @@
+.goBack {
+    border: 2px solid rgba(30, 177, 217, 0.601);
+    position: absolute;
+    left: 10%;
+    top: 10%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: larger;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 20px;
+    transition: 0.1s;
+}
+
+
+.goBack img {
+    width: 30px;
+    height: 30px;
+}
+
+.goBack:hover {
+    background-color: rgba(30, 177, 217, 0.601);
+    border: 2px solid navy;
+
+}
+
+
 .login {
     height: 100vh;
     display: flex;
